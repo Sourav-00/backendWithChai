@@ -17,4 +17,10 @@ app.use(express.urlencoded({extended:true,limit:"16kb"}))  // middleware to tell
 app.use(express.static("public")) // middleware that  stores the static files like image videos etc inside public folder
 app.use(cookieParser())  // it is used to get and store the data in users browser
 
+
+//routes
+import userRouter from "./routes/user.routes.js"
+
+//routes declarations
+app.use("/users",userRouter)
 export {app}

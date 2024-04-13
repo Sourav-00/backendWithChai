@@ -5,7 +5,7 @@ import connectDB from "./db/index.js";
 // dotenv.config({path:'./env'})
  // import upar standard way me kr liya hai but config yaha kr liya 
 
-
+import { app } from './app.js';
 connectDB() // function callling from DB folder to connect with DB
 // As early as possible in your application, import and configure dotenv: (Taaki jaha bhi env variable use ho rhe hai wo sabhi unhe jitna jaldi ho ske mil jaaye tbhi hum unhe entry point ki files me hi import kr lenge)
 .then(()=>{
