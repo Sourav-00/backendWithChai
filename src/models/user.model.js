@@ -56,7 +56,7 @@ const userSchema = Schema(
 userSchema.pre("save", async function(next){      // this is the middleware of mongoose we are using for encryption of the users password just before the save event in the db
     if(this.isModified("password"))
     {
-        this.password = bcrypt.hash(this.password,10);     // bcrypt is a library used for encryption of the string/passwords
+        this.password = await bcrypt.hash(this.password,10);     // bcrypt is a library used for encryption of the string/passwords
         next();      // middleware always carry next to transfer control of the process 
     }
     else {
